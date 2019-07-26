@@ -56,8 +56,8 @@ var parallide;
         };
         WordTile.prototype.load = function () {
             var wordTile = document.getElementById("wordTile");
-            for (var index417 = 0; index417 < this.elements.length; index417++) {
-                var e = this.elements[index417];
+            for (var index457 = 0; index457 < this.elements.length; index457++) {
+                var e = this.elements[index457];
                 {
                     wordTile.appendChild(e);
                 }
@@ -65,8 +65,8 @@ var parallide;
         };
         WordTile.prototype.unload = function () {
             var wordTile = document.getElementById("wordTile");
-            for (var index418 = 0; index418 < this.elements.length; index418++) {
-                var e = this.elements[index418];
+            for (var index458 = 0; index458 < this.elements.length; index458++) {
+                var e = this.elements[index458];
                 {
                     wordTile.removeChild(e);
                 }
@@ -172,8 +172,8 @@ var parallide;
             return this.lastLetter;
         };
         WordTile.prototype.getSelected = function () {
-            for (var index419 = 0; index419 < this.letters.length; index419++) {
-                var l = this.letters[index419];
+            for (var index459 = 0; index459 < this.letters.length; index459++) {
+                var l = this.letters[index459];
                 {
                     if (l.isSelected()) {
                         return l;
@@ -226,8 +226,8 @@ var parallide;
         /*private*/ WordTile.prototype.markCompleted = function () {
             var _this = this;
             this.firstLetter.setCompleted(true);
-            for (var index420 = 0; index420 < this.letters.length; index420++) {
-                var l = this.letters[index420];
+            for (var index460 = 0; index460 < this.letters.length; index460++) {
+                var l = this.letters[index460];
                 {
                     l.setCompleted(true);
                 }
