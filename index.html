@@ -176,7 +176,26 @@
               width: 25%;
               float:right;
           }
+          #playagain {
+              position: absolute;
+              font-family: Helvetica;
+              text-align: center;
+              left: 0;
+              right: 0;
+              margin-left: auto;
+              margin-right: auto;
+              top: 75vh;
+          }
 
+          #playagainbtn {
+              background-color: white;
+              height: 8vh;
+              width: 25vw;
+              font-size: 3vh;
+              color: var(--box-purple);
+              overflow-x: hidden;
+              cursor: pointer;
+          }
         @media screen and (orientation:portrait) {
             /*Portrait Styles*/
             #wordTile div {
@@ -199,6 +218,9 @@
             }
             .title h1 {
               font-size: 14vw;
+            }
+            #playagainbtn {
+              font-size: 4vw;
             }
         }
     </style>
@@ -232,6 +254,9 @@
     <script type="text/javascript" src="js/parallide/WordTile.js"></script>
     <script type="text/javascript" src="js/parallide/Level.js"></script>
     <script type="text/javascript" src="js/parallide/ParallideJS.js"></script>
+    <div id="playagain" style="visibility: hidden;">
+      <button id="playagainbtn">Play Again</button>
+    </div>
 
 </body>
 </html>

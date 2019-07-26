@@ -35,12 +35,20 @@ var parallide;
             this.incrementTimer();
         };
         Level.prototype.nextWord = function () {
+            var _this = this;
             if (this.currentWord < this.words.length - 1) {
                 this.currentWord++;
                 this.loadWord(this.currentWord);
             }
             else {
                 this.completed = true;
+                document.getElementById("playagain").replaceChild(document.getElementById("playagainbtn").cloneNode(), document.getElementById("playagainbtn"));
+                document.getElementById("playagainbtn").innerHTML = "Play Again";
+                document.getElementById("playagain").style.visibility = "visible";
+                document.getElementById("playagainbtn").addEventListener("click", function (event) {
+                    _this.unload();
+                    document.getElementById("playagain").style.visibility = "hidden";
+                });
             }
         };
         Level.prototype.loadWord = function (index) {
@@ -69,6 +77,13 @@ var parallide;
         Level.prototype.adjust = function () {
             this.resetBoxSize();
             this.words[this.currentWord].adjust();
+        };
+        Level.prototype.unload = function () {
+            document.getElementById("startInfo").style.visibility = "visible";
+            document.getElementById("stats").style.visibility = "hidden";
+            document.getElementById("wordTile").style.visibility = "hidden";
+            document.getElementById("timer").style.visibility = "0.0";
+            this.words[this.currentWord].unload();
         };
         /*private*/ Level.prototype.incrementTimer = function () {
             var _this = this;
