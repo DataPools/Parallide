@@ -16,6 +16,7 @@ var parallide;
         };
         ParallideJS.launchLevel = function (levelWords) {
             var first = new parallide.Level(levelWords);
+            document.getElementById("explanation").style.visibility = "hidden";
             document.getElementById("startInfo").style.visibility = "hidden";
             document.getElementById("stats").style.visibility = "visible";
             document.getElementById("wordTile").style.visibility = "visible";

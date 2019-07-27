@@ -3,6 +3,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width">
+    <link rel="icon" href="favicon.ico" type="image/x-icon" />
     <title>Play Parallide</title>
     <style>
         :root {
@@ -131,10 +132,6 @@
              user-select: none;
          }
 
-        .title {
-            padding-bottom: 10vh;
-        }
-
         .title h1 {
             display: block;
             margin-top: 1vh;
@@ -196,6 +193,20 @@
               overflow-x: hidden;
               cursor: pointer;
           }
+          #explanation {
+            position: absolute;
+            left: 0px;
+            right: 0px;
+            margin-left: auto;
+            margin-right: auto;
+            bottom: 15vh;
+            text-align: center;
+            font-size: 2vh;
+            line-height: 2.5vh;
+          }
+          #explanation u {
+            line-height: 3.5vh;
+          }
         @media screen and (orientation:portrait) {
             /*Portrait Styles*/
             #wordTile div {
@@ -221,6 +232,9 @@
             }
             #playagainbtn {
               font-size: 4vw;
+            }
+            #explanation {
+              font-size: 2vh;
             }
         }
     </style>
@@ -257,6 +271,8 @@
     <div id="playagain" style="visibility: hidden;">
       <button id="playagainbtn">Play Again</button>
     </div>
-
+    <p id="explanation"><u>How do you play Parallide?</u>
+      <br>Parallide is a timed game, where you must swap tiles in order to unscramble the word. <br>The first and last letter are not scrambled and do not need to be swapped. <br>To swap a tile, click on it, and then click on the other tile you wish to swap it with.
+    </p>
 </body>
 </html>

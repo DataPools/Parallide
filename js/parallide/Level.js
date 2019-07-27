@@ -79,6 +79,7 @@ var parallide;
             this.words[this.currentWord].adjust();
         };
         Level.prototype.unload = function () {
+            document.getElementById("explanation").style.visibility = "visible";
             document.getElementById("startInfo").style.visibility = "visible";
             document.getElementById("stats").style.visibility = "hidden";
             document.getElementById("wordTile").style.visibility = "hidden";
