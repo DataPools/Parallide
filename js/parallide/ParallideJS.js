@@ -50,8 +50,9 @@ var parallide;
                             if (j >= response.length) {
                                 j = 0;
                             }
-                            if (response[j].toString().length > 4 && ParallideJS.insideComposedOfSameLetters(response[j]) === false) {
-                                toreturn[i] = response[j].split("\r\n").join("").toUpperCase().trim();
+                            var wordCandidate = response[j].toString().split("\r\n").join("").toUpperCase().trim();
+                            if (wordCandidate.length > 3 && ParallideJS.insideComposedOfSameLetters(wordCandidate) === false) {
+                                toreturn[i] = wordCandidate;
                                 i++;
                             }
                             j++;
@@ -65,10 +66,15 @@ var parallide;
         };
         /*private*/ ParallideJS.insideComposedOfSameLetters = function (input) {
             input = input.substring(1, input.length - 1);
-            var first = input.charAt(0);
-            for (var i = 1; i < input.length; i++) {
+            var first = input.substring(0, 1);
+            for (var i = 1; i < input.length + 1; i++) {
                 {
-                    if ((function (c) { return c.charCodeAt == null ? c : c.charCodeAt(0); })(input.charAt(i)) != (function (c) { return c.charCodeAt == null ? c : c.charCodeAt(0); })(first)) {
+                    if (!((function (o1, o2) { if (o1 && o1.equals) {
+                        return o1.equals(o2);
+                    }
+                    else {
+                        return o1 === o2;
+                    } })(input.substring(i - 1, i), first))) {
                         return false;
                     }
                 }
